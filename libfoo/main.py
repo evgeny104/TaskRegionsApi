@@ -45,6 +45,20 @@ def test_contre_code_kg():     # Функция проверяет  Код ст�
     assert body["items"][0]["country"]["code"] == "kg"
 
 
+def test_contre_code_kz():     # Функция проверяет  Код страны для фильтрации "kz"
+    res = requests.get('https://regions-test.2gis.com/1.0/regions?country_code=kz')
+    body = json.loads(res.text)
+    assert body["items"][0]["country"]["name"] == "Казахстан"
+    assert body["items"][0]["country"]["code"] == "kz"
+
+
+def test_contre_code_cz():     # Функция проверяет  Код страны для фильтрации "cz"
+    res = requests.get('https://regions-test.2gis.com/1.0/regions?country_code=cz')
+    body = json.loads(res.text)
+    assert body["items"][0]["country"]["name"] == "Чехия"
+    assert body["items"][0]["country"]["code"] == "cz"
+
+
 test_total_count()
 
 test_region_q()
@@ -53,4 +67,5 @@ test_region_q_allignore()
 
 test_contre_code_ru()
 test_contre_code_kg()
-
+test_contre_code_kz()
+test_contre_code_cz()
