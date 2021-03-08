@@ -1,5 +1,4 @@
 .idea
 venv
 .pytest_cache
-test_example.py
 __pycache__
