@@ -38,14 +38,14 @@ def test_contre_code_ru():     # Функция проверяет  Код ст�
     assert body["items"][0]["country"]["code"] == "ru"
 
 
-def test_contre_code_kg():     # Функция проверяет  Код страны для фильтрации "kg"
+def test_contre_code_kg():     # БАГ Функция проверяет  Код страны для фильтрации "kg"
     res = requests.get('https://regions-test.2gis.com/1.0/regions?country_code=kg')
     body = json.loads(res.text)
     assert body["items"][3]["country"]["name"] == "Кыргызстан"
     assert body["items"][3]["country"]["code"] == "kg"
 
 
-def test_contre_code_kz():     # Функция проверяет  Код страны для фильтрации "kz"
+def test_contre_code_kz():     # БАГ  Функция проверяет  Код страны для фильтрации "kz"
     res = requests.get('https://regions-test.2gis.com/1.0/regions?country_code=kz')
     body = json.loads(res.text)
     assert body["items"][0]["country"]["name"] == "Казахстан"
